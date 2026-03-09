@@ -1,0 +1,5 @@
+*.mmdb
+.venv/
+__pycache__/
+analysis_report.csv
+my_libs/
