@@ -1,0 +1,9 @@
+services:
+  geoguard:
+    build: .
+    container_name: geoguard_analysis
+    volumes:
+      - ./GeoLite2-ASN.mmdb:/app/GeoLite2-ASN.mmdb
+      - ./GeoLite2-Country.mmdb:/app/GeoLite2-Country.mmdb
+      - ./input_ips.txt:/app/input_ips.txt
+      - ./detailed_analysis_report.csv:/app/detailed_analysis_report.csv
