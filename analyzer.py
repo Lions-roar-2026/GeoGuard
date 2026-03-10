@@ -2,6 +2,8 @@ import csv
 import geoip2.database
 import os
 
+from geoip2.errors import AddressNotFoundError
+
 from utils.anomaly import detect_anomalies
 
 # classify IP addresses as server/bot
@@ -12,7 +14,13 @@ CLOUD_KEYWORDS = ['amazon', 'google', 'microsoft', 'azure', 'digitalocean',
 def get_asn_org(ip, reader):
     try:
         response = reader.asn(ip)
-        return response.autonomous_system_organization if response.autonomous_system_organization else "Unknown"
+        return response.autonomous_system_organization or "Unknown"
+    except AddressNotFoundError:
+        print(f"debug: ip {ip} not found in database.")
+        return "Unknown"
+    except ValueError:
+        print(f"debug: invalid ip format: {ip}")
+        return "Invalid"
     except Exception as e:
         print(f"debug: unexpected error for {ip}: {e}")
         return "Unknown"
