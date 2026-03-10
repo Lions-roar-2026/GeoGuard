@@ -12,3 +12,18 @@ This project is an automated tool designed to process lists of IP addresses and 
 2. Download `GeoLite2-Country.mmdb` and `GeoLite2-ASN.mmdb` from MaxMind.
 3. Add your IPs to `input_ips.txt`.
 4. Run: `python analyzer.py`
+
+## Example of output analysis:
+Starting analysis on input_ips.txt...
+Processed 8.8.8.8: bot/Server
+Processed 52.94.10.1: bot/Server
+Processed 1.1.1.1: pc/mobile
+Processed 35.190.5.5: bot/Server
+Success! Detailed report saved to: detailed_analysis_report.csv
+
+## So whats next?
+adding support to:
+1 "Anomaly Detection"
+2 more scalability to read files from network
+3 scheduling when to read new MMD files
+4 error handling
