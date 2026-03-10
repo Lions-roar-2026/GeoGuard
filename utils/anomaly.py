@@ -4,7 +4,7 @@ def detect_anomalies(results, threshold=50):
     traffic exceeds a specific percentage threshold.
     """
 
-    # check if the results list is empty to avoid division by zero
+    # check if the results list is empty to avoid division by zero.
     if len(results) == 0:
         print("no data available for anomaly detection.")
         return False
