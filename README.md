@@ -23,7 +23,8 @@ Success! Detailed report saved to: detailed_analysis_report.csv
 
 ## So whats next?
 adding support to:
-1. anomaly detect of ips
-2. more scalability to read files from network
-3. scheduling when to read new MMD files
-4. error handling
+1. anomaly detect of ips -Done!
+2. more scalability to read files from network - Done !
+3. scheduling when to read new MMD files - Done!
+4. error handling - Done !
+5. tests 
