@@ -22,7 +22,7 @@ def block_bots():
     It checks the User-Agent header to identify and block bots.
     """
     # get the User-Agent header from the incoming request
-    user_agent = request.headers.get('User-Agent', '')
+    user_agent = request.headers.get('User-Agent', '').lower()
 
     # check if any banned bot name exists in the current User-Agent
     for bot in BANNED_BOTS:
